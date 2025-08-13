@@ -7,8 +7,8 @@
     "home": "首页"
   },
   "index": {
-    "title": "欢迎使用您的空白应用",
-    "subtitle": "在这里开始构建您令人惊叹的项目！",
+    "title": "欢迎使用MRI序列速查表",
+    "subtitle": "在这里开始便捷地回顾MRI序列知识！",
     "viewCheatsheet": "查看MRI序列速查表"
   },
   "mriCheatsheet": {

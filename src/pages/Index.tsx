@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
-
+import logo from "/mri_cheatsheet_logo.png";
 const Index = () => {
   const { t } = useTranslation();
 
@@ -21,7 +21,11 @@ const Index = () => {
         </p>
         <Link to="/mri-cheatsheet">
           <Button size="lg" className="px-8 py-4 text-lg">{t('index.viewCheatsheet')}</Button>
+          <div className="flex justify-center items-center">
+            <img src={logo} alt="logo" className="w-[150px] mt-4" />
+          </div>
         </Link>
+
       </div>
       <MadeByNeonity />
     </div>
