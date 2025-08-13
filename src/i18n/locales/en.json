@@ -1,0 +1,68 @@
+{
+  "common": {
+    "language": "Language",
+    "english": "English",
+    "chinese": "中文",
+    "back": "Back",
+    "home": "Home"
+  },
+  "index": {
+    "title": "Welcome to Your Blank App",
+    "subtitle": "Start building your amazing project here!",
+    "viewCheatsheet": "View MRI Sequences Cheatsheet"
+  },
+  "mriCheatsheet": {
+    "title": "MRI Sequences Cheatsheet",
+    "subtitle": "A quick reference guide to common MRI sequences and their key characteristics.",
+    "backToHome": "Back to Home",
+    "mobileTips": {
+      "title": "Mobile Operation Tips",
+      "description": "The first column (Sequence Name) is fixed, while other columns (Characteristics, Appearance, Use) can be viewed by swiping left and right. Headers and content are perfectly aligned for clearer browsing."
+    },
+    "swipeHint": "Swipe left and right to view more column information",
+    "table": {
+      "sequence": "Sequence",
+      "characteristics": "Characteristics",
+      "appearance": "Appearance",
+      "commonUse": "Common Use"
+    },
+    "sequences": {
+      "t1w": {
+        "name": "T1-weighted (T1W)",
+        "characteristics": "Short TR, Short TE",
+        "appearance": "Fat is bright, water/CSF is dark, gray matter is darker than white matter.",
+        "use": "Anatomy, post-contrast imaging (gadolinium enhances bright areas)."
+      },
+      "t2w": {
+        "name": "T2-weighted (T2W)",
+        "characteristics": "Long TR, Long TE",
+        "appearance": "Water/CSF is bright, fat is intermediate, gray matter is brighter than white matter.",
+        "use": "Pathology (edema, inflammation, tumors often appear bright)."
+      },
+      "flair": {
+        "name": "FLAIR (Fluid-Attenuated Inversion Recovery)",
+        "characteristics": "Long TR, Long TE, Inversion Pulse (nulls CSF signal)",
+        "appearance": "Similar to T2W, but CSF is dark. Lesions near CSF are better visualized.",
+        "use": "Periventricular lesions (e.g., MS plaques), subarachnoid hemorrhage, edema."
+      },
+      "dwi": {
+        "name": "DWI (Diffusion-Weighted Imaging)",
+        "characteristics": "Sensitive to water molecule movement",
+        "appearance": "Areas with restricted diffusion (e.g., acute stroke, high cellularity tumors) appear bright.",
+        "use": "Acute stroke, abscesses, highly cellular tumors."
+      },
+      "stir": {
+        "name": "STIR (Short Tau Inversion Recovery)",
+        "characteristics": "Inversion Pulse (nulls fat signal)",
+        "appearance": "Fat is dark, water/edema is bright.",
+        "use": "Fat suppression (e.g., musculoskeletal imaging for bone marrow edema, soft tissue lesions)."
+      },
+      "gre": {
+        "name": "GRE (Gradient Echo)",
+        "characteristics": "No 180-degree refocusing pulse, sensitive to susceptibility effects",
+        "appearance": "Blood products, calcifications, and air appear dark.",
+        "use": "Hemorrhage, vascular malformations, cartilage imaging."
+      }
+    }
+  }
+}

@@ -1,0 +1,181 @@
+/* 移动端表格优化样式 */
+@media (max-width: 768px) {
+  .responsive-table-mobile {
+    /* 确保表格容器有足够的空间 */
+    min-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* 表格容器样式 */
+  .responsive-table-mobile table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: max-content;
+    min-width: 100%;
+  }
+  
+  /* 固定列的样式 */
+  .responsive-table-mobile th:first-child,
+  .responsive-table-mobile td:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 20;
+    background: inherit;
+  }
+  
+  /* 表头固定列的背景 */
+  .responsive-table-mobile th:first-child {
+    background-color: rgb(249 250 251) !important; /* bg-gray-50 */
+  }
+  
+  .dark .responsive-table-mobile th:first-child {
+    background-color: rgb(31 41 55) !important; /* dark:bg-gray-800 */
+  }
+  
+  /* 表格行固定列的背景 */
+  .responsive-table-mobile td:first-child {
+    background-color: rgb(255 255 255) !important; /* bg-white */
+  }
+  
+  .dark .responsive-table-mobile td:first-child {
+    background-color: rgb(17 24 39) !important; /* dark:bg-gray-900 */
+  }
+  
+  /* 悬停时的背景色 */
+  .responsive-table-mobile tr:hover td:first-child {
+    background-color: rgb(249 250 251) !important; /* hover:bg-gray-50 */
+  }
+  
+  .dark .responsive-table-mobile tr:hover td:first-child {
+    background-color: rgb(31 41 55) !important; /* dark:hover:bg-gray-800 */
+  }
+  
+  /* 表格行悬停效果 */
+  .table-row-hover:hover {
+    background-color: rgba(59, 130, 246, 0.05);
+  }
+  
+  /* 暗色模式下的悬停效果 */
+  .dark .table-row-hover:hover {
+    background-color: rgba(59, 130, 246, 0.1);
+  }
+  
+  /* 表格边框和分隔线 */
+  .responsive-table-mobile th,
+  .responsive-table-mobile td {
+    border-bottom: 1px solid rgb(229 231 235); /* border-gray-200 */
+    border-right: 1px solid rgb(229 231 235); /* border-gray-200 */
+  }
+  
+  .dark .responsive-table-mobile th,
+  .dark .responsive-table-mobile td {
+    border-bottom: 1px solid rgb(55 65 81); /* dark:border-gray-700 */
+    border-right: 1px solid rgb(55 65 81); /* dark:border-gray-700 */
+  }
+  
+  /* 固定列右侧边框加粗 */
+  .responsive-table-mobile th:first-child,
+  .responsive-table-mobile td:first-child {
+    border-right: 2px solid rgb(229 231 235) !important; /* border-r-2 border-gray-200 */
+  }
+  
+  .dark .responsive-table-mobile th:first-child,
+  .dark .responsive-table-mobile td:first-child {
+    border-right: 2px solid rgb(55 65 81) !important; /* dark:border-r-2 dark:border-gray-700 */
+  }
+  
+  /* 最后一列不需要右边框 */
+  .responsive-table-mobile th:last-child,
+  .responsive-table-mobile td:last-child {
+    border-right: none;
+  }
+  
+  /* 表格头部样式 */
+  .responsive-table-mobile thead {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  
+  /* 自定义滚动条样式 */
+  .responsive-table-mobile::-webkit-scrollbar {
+    height: 8px;
+  }
+  
+  .responsive-table-mobile::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 4px;
+  }
+  
+  .responsive-table-mobile::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+  }
+  
+  .responsive-table-mobile::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+  }
+  
+  /* 暗色模式下的滚动条 */
+  .dark .responsive-table-mobile::-webkit-scrollbar-track {
+    background: #1e293b;
+  }
+  
+  .dark .responsive-table-mobile::-webkit-scrollbar-thumb {
+    background: #475569;
+  }
+  
+  .dark .responsive-table-mobile::-webkit-scrollbar-thumb:hover {
+    background: #64748b;
+  }
+}
+
+/* 表格单元格文本换行优化 */
+.table-cell-text {
+  word-wrap: break-word;
+  hyphens: auto;
+  line-height: 1.5;
+}
+
+/* 响应式字体大小 */
+@media (max-width: 640px) {
+  .table-cell-text {
+    font-size: 0.875rem;
+    line-height: 1.4;
+  }
+  
+  /* 移动端表格列宽优化 */
+  .responsive-table-mobile th:first-child,
+  .responsive-table-mobile td:first-child {
+    width: 120px !important;
+    min-width: 120px !important;
+  }
+  
+  .responsive-table-mobile th:nth-child(2),
+  .responsive-table-mobile td:nth-child(2) {
+    width: 140px !important;
+    min-width: 140px !important;
+  }
+  
+  .responsive-table-mobile th:nth-child(3),
+  .responsive-table-mobile td:nth-child(3) {
+    width: 200px !important;
+    min-width: 200px !important;
+  }
+  
+  .responsive-table-mobile th:nth-child(4),
+  .responsive-table-mobile td:nth-child(4) {
+    width: 180px !important;
+    min-width: 180px !important;
+  }
+}
+
+/* 确保表格在所有设备上的对齐 */
+.responsive-table-mobile th,
+.responsive-table-mobile td {
+  box-sizing: border-box;
+  vertical-align: top;
+  text-align: left;
+  padding: 0.75rem;
+}

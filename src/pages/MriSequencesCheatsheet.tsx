@@ -1,90 +1,98 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { MadeWithDyad } from "@/components/made-with-dyad";
+import { MadeByNeonity } from "@/components/made-by-neonity";
+import { useTranslation } from "react-i18next";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
+import ResponsiveTable from "@/components/ResponsiveTable";
+import TableInstructions from "@/components/TableInstructions";
 
 const MriSequencesCheatsheet = () => {
-  const sequences = [
+  const { t } = useTranslation();
+
+  const sequences = useMemo(() => [
     {
-      name: "T1-weighted (T1W)",
-      characteristics: "Short TR, Short TE",
-      appearance: "Fat is bright, water/CSF is dark, gray matter is darker than white matter.",
-      use: "Anatomy, post-contrast imaging (gadolinium enhances bright areas).",
+      key: 't1w',
+      name: t('mriCheatsheet.sequences.t1w.name'),
+      characteristics: t('mriCheatsheet.sequences.t1w.characteristics'),
+      appearance: t('mriCheatsheet.sequences.t1w.appearance'),
+      use: t('mriCheatsheet.sequences.t1w.use'),
     },
     {
-      name: "T2-weighted (T2W)",
-      characteristics: "Long TR, Long TE",
-      appearance: "Water/CSF is bright, fat is intermediate, gray matter is brighter than white matter.",
-      use: "Pathology (edema, inflammation, tumors often appear bright).",
+      key: 't2w',
+      name: t('mriCheatsheet.sequences.t2w.name'),
+      characteristics: t('mriCheatsheet.sequences.t2w.characteristics'),
+      appearance: t('mriCheatsheet.sequences.t2w.appearance'),
+      use: t('mriCheatsheet.sequences.t2w.use'),
     },
     {
-      name: "FLAIR (Fluid-Attenuated Inversion Recovery)",
-      characteristics: "Long TR, Long TE, Inversion Pulse (nulls CSF signal)",
-      appearance: "Similar to T2W, but CSF is dark. Lesions near CSF are better visualized.",
-      use: "Periventricular lesions (e.g., MS plaques), subarachnoid hemorrhage, edema.",
+      key: 'flair',
+      name: t('mriCheatsheet.sequences.flair.name'),
+      characteristics: t('mriCheatsheet.sequences.flair.characteristics'),
+      appearance: t('mriCheatsheet.sequences.flair.appearance'),
+      use: t('mriCheatsheet.sequences.flair.use'),
     },
     {
-      name: "DWI (Diffusion-Weighted Imaging)",
-      characteristics: "Sensitive to water molecule movement",
-      appearance: "Areas with restricted diffusion (e.g., acute stroke, high cellularity tumors) appear bright.",
-      use: "Acute stroke, abscesses, highly cellular tumors.",
+      key: 'dwi',
+      name: t('mriCheatsheet.sequences.dwi.name'),
+      characteristics: t('mriCheatsheet.sequences.dwi.characteristics'),
+      appearance: t('mriCheatsheet.sequences.dwi.appearance'),
+      use: t('mriCheatsheet.sequences.dwi.use'),
     },
     {
-      name: "STIR (Short Tau Inversion Recovery)",
-      characteristics: "Inversion Pulse (nulls fat signal)",
-      appearance: "Fat is dark, water/edema is bright.",
-      use: "Fat suppression (e.g., musculoskeletal imaging for bone marrow edema, soft tissue lesions).",
+      key: 'stir',
+      name: t('mriCheatsheet.sequences.stir.name'),
+      characteristics: t('mriCheatsheet.sequences.stir.characteristics'),
+      appearance: t('mriCheatsheet.sequences.stir.appearance'),
+      use: t('mriCheatsheet.sequences.stir.use'),
     },
     {
-      name: "GRE (Gradient Echo)",
-      characteristics: "No 180-degree refocusing pulse, sensitive to susceptibility effects",
-      appearance: "Blood products, calcifications, and air appear dark.",
-      use: "Hemorrhage, vascular malformations, cartilage imaging.",
+      key: 'gre',
+      name: t('mriCheatsheet.sequences.gre.name'),
+      characteristics: t('mriCheatsheet.sequences.gre.characteristics'),
+      appearance: t('mriCheatsheet.sequences.gre.appearance'),
+      use: t('mriCheatsheet.sequences.gre.use'),
     },
-  ];
+  ], [t]);
+
+  const tableHeaders = {
+    sequence: t('mriCheatsheet.table.sequence'),
+    characteristics: t('mriCheatsheet.table.characteristics'),
+    appearance: t('mriCheatsheet.table.appearance'),
+    commonUse: t('mriCheatsheet.table.commonUse'),
+  };
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 dark:bg-gray-900 p-4">
-      <Card className="w-full max-w-4xl shadow-lg">
+      {/* 语言切换器 */}
+      <div className="absolute top-4 right-4">
+        <LanguageSwitcher />
+      </div>
+      
+      <Card className="w-full max-w-6xl shadow-lg">
         <CardHeader>
-          <CardTitle className="text-3xl font-bold text-center">MRI Sequences Cheatsheet</CardTitle>
+          <CardTitle className="text-3xl font-bold text-center">{t('mriCheatsheet.title')}</CardTitle>
         </CardHeader>
         <CardContent>
           <p className="text-center text-gray-700 dark:text-gray-300 mb-6">
-            A quick reference guide to common MRI sequences and their key characteristics.
+            {t('mriCheatsheet.subtitle')}
           </p>
-          <div className="overflow-x-auto">
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead className="w-[150px]">Sequence</TableHead>
-                  <TableHead>Characteristics</TableHead>
-                  <TableHead>Appearance</TableHead>
-                  <TableHead>Common Use</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {sequences.map((seq) => (
-                  <TableRow key={seq.name}>
-                    <TableCell className="font-medium">{seq.name}</TableCell>
-                    <TableCell>{seq.characteristics}</TableCell>
-                    <TableCell>{seq.appearance}</TableCell>
-                    <TableCell>{seq.use}</TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </div>
+          
+          {/* 移动端操作说明 */}
+          <TableInstructions />
+          
+          {/* 使用响应式表格组件 */}
+          <ResponsiveTable data={sequences} headers={tableHeaders} />
+          
           <div className="text-center mt-8">
             <Link to="/">
-              <Button variant="outline">Back to Home</Button>
+              <Button variant="outline">{t('mriCheatsheet.backToHome')}</Button>
             </Link>
           </div>
         </CardContent>
       </Card>
-      <MadeWithDyad />
+      <MadeByNeonity />
     </div>
   );
 };

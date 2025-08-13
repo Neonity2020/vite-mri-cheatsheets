@@ -1,0 +1,68 @@
+{
+  "common": {
+    "language": "语言",
+    "english": "English",
+    "chinese": "中文",
+    "back": "返回",
+    "home": "首页"
+  },
+  "index": {
+    "title": "欢迎使用您的空白应用",
+    "subtitle": "在这里开始构建您令人惊叹的项目！",
+    "viewCheatsheet": "查看MRI序列速查表"
+  },
+  "mriCheatsheet": {
+    "title": "MRI序列速查表",
+    "subtitle": "常见MRI序列及其关键特性的快速参考指南。",
+    "backToHome": "返回首页",
+    "mobileTips": {
+      "title": "移动端操作提示",
+      "description": "第一列（序列名称）已固定，其他列（特性、表现、用途）可以左右滑动查看。表头与内容完全对齐，浏览更清晰。"
+    },
+    "swipeHint": "左右滑动查看更多列信息",
+    "table": {
+      "sequence": "序列",
+      "characteristics": "特性",
+      "appearance": "表现",
+      "commonUse": "常见用途"
+    },
+    "sequences": {
+      "t1w": {
+        "name": "T1加权 (T1W)",
+        "characteristics": "短TR，短TE",
+        "appearance": "脂肪呈高信号，水/脑脊液呈低信号，灰质比白质更暗。",
+        "use": "解剖学，对比增强成像（钆剂增强高信号区域）。"
+      },
+      "t2w": {
+        "name": "T2加权 (T2W)",
+        "characteristics": "长TR，长TE",
+        "appearance": "水/脑脊液呈高信号，脂肪呈中等信号，灰质比白质更亮。",
+        "use": "病理学（水肿、炎症、肿瘤通常呈高信号）。"
+      },
+      "flair": {
+        "name": "FLAIR（液体衰减反转恢复）",
+        "characteristics": "长TR，长TE，反转脉冲（抑制脑脊液信号）",
+        "appearance": "与T2W相似，但脑脊液呈低信号。脑脊液附近的病变更好地可视化。",
+        "use": "脑室周围病变（如多发性硬化斑块）、蛛网膜下腔出血、水肿。"
+      },
+      "dwi": {
+        "name": "DWI（弥散加权成像）",
+        "characteristics": "对水分子运动敏感",
+        "appearance": "弥散受限区域（如急性卒中、高细胞性肿瘤）呈高信号。",
+        "use": "急性卒中、脓肿、高细胞性肿瘤。"
+      },
+      "stir": {
+        "name": "STIR（短Tau反转恢复）",
+        "characteristics": "反转脉冲（抑制脂肪信号）",
+        "appearance": "脂肪呈低信号，水/水肿呈高信号。",
+        "use": "脂肪抑制（如肌肉骨骼成像用于骨髓水肿、软组织病变）。"
+      },
+      "gre": {
+        "name": "GRE（梯度回波）",
+        "characteristics": "无180度重聚焦脉冲，对磁敏感效应敏感",
+        "appearance": "血液产物、钙化和空气呈低信号。",
+        "use": "出血、血管畸形、软骨成像。"
+      }
+    }
+  }
+}
